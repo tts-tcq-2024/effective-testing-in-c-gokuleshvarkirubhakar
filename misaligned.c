@@ -5,8 +5,8 @@
 
 typedef struct {
     int pairNo;
-    char *majorColor;
-    char *minorColor;
+    const char *majorColor;
+    const char *minorColor;
 }color_code;
 
 color_code color_code_table[25] = {
