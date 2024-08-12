@@ -9,7 +9,7 @@ typedef struct {
     const char *minorColor;
 }color_code;
 
-color_code color_code_table[25] = {
+color_code expected_color_code_table[25] = {
 {1, "White", "Blue"},
 {2, "White", "Orange"},
 {3, "White", "Green"},
@@ -81,7 +81,7 @@ void Test_printColorMap(void) {
     while (line != NULL) {
         sscanf(line, "%d | %9s | %9s", &pairNo, majorColor, minorColor);
         assert(pairNo==color_code_table[idx].pairNo);
-        assert(strcmp(majorColor,color_code_table[idx].majorColor) == 0);
+        assert(b(majorColor,color_code_table[idx].majorColor) == 0);
         assert(strcmp(minorColor,color_code_table[idx].minorColor) == 0);
         line = strtok(NULL, "\n");
         idx++;
